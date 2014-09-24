@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+  <title></title>
+</head>
+<body>
+
+  <!-- Meetups View -->  
+  <div ng-controller="studentsController">
+    <h1>There are {{students.length}} Students</h1>
+    <ul>
+      <li ng-repeat="student in students">
+        <p>name: {{student.name}} |||| course: {{student.course}} ||||
+        rec1: {{student.rec1}} |||| rec2: {{student.rec2}} |||| rec3: {{student.rec3}}
+        |||| note: {{student.note}}
+        </p> 
+      </li>
+    </ul>
+    <form ng-submit="createStudent()">
+      <input type="text" placeholder="Student name" ng-model="studentName"></input>
+      <input type="text" placeholder="Student course" ng-model="studentCourse"></input>
+      <input type="text" placeholder="Student rec1" ng-model="studentRec1"></input>
+      <input type="text" placeholder="Student rec2" ng-model="studentRec2"></input>
+      <input type="text" placeholder="Student rec3" ng-model="studentRec3"></input>
+      <input type="text" placeholder="Student note" ng-model="studentNote"></input>
+
+      <button type="submit">Save information</button>
+    </form>
+   
+    <form ng-submit="removeStudent()">
+      <button type="button">remove</button>
+    </form>
+
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+
+  <script type="text/javascript" src="/js/app.js"></script>
+  <script type="text/javascript" src="/js/controllers/students-controller.js"></script>
+
+
+</body>
+</html>
